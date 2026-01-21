@@ -6,7 +6,7 @@ import json
 from Chat2Audio import format_size
 
 
-def generate_tts_audio(text: str, output_file="output.wav"):
+def generate_tts_audio(text: str, output_file="voice.wav"):
     """生成TTS音频文件"""
     print(f"开始生成语音: {text[:50]}...")
 
