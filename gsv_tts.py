@@ -3,17 +3,24 @@ import os
 import sys
 import time
 import json
-from Chat2Audio import format_size
 
 
-def generate_tts_audio(text: str, output_file="voice.wav"):
+def format_size(size_in_bytes):
+    for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+        if size_in_bytes < 1024.0:
+            return f"{size_in_bytes:.2f} {unit}"
+        size_in_bytes /= 1024.0
+    return f"{size_in_bytes:.2f} PB"
+
+
+def generate_tts_audio(text: str, output_file="voice_tmp.wav"):
     """生成TTS音频文件"""
     print(f"开始生成语音: {text[:50]}...")
 
     # 发送请求
     json_data = {
-        "refer_wav_path": "F:/developToolkit/GSV/符玄/激动说话-如此境地，还要处理将军交来的星核猎手，可不是大祸临头？.wav",
-        "prompt_text": "如此境地，还要处理将军交来的星核猎手，可不是大祸临头？",
+        "refer_wav_path": "F:/developToolkit/GSV/符玄/平静说话-说来，下次「六御」议政，你该履行举荐我继任将军的诺言了吧…….wav",
+        "prompt_text": "说来，下次「六御」议政，你该履行举荐我继任将军的诺言了吧……",
         "prompt_language": "zh",
         "text": text,
         "text_language": "zh"
@@ -40,4 +47,3 @@ def generate_tts_audio(text: str, output_file="voice.wav"):
     except Exception as e:
         print(f"❌ 发生错误: {e}")
         return False
-
