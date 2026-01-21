@@ -10,7 +10,7 @@ async def chat_with_ollama_with_tts():
     """带TTS的异步聊天函数"""
     client = AsyncClient()
     messages = [{"role": "user",
-                 "content": "请扮演一位朋友，在日常闲聊的语境下，生成一段口语化的对话或独白，要求在45字以内"}]
+                 "content": "请扮演一位朋友，在日常闲聊的语境下，生成一段口语化的对话或独白，要求在40字以内"}]
 
     print("deepseek-r1 模型服务已启动！输入 '退出' 结束对话。")
 

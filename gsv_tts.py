@@ -3,6 +3,7 @@ import os
 import sys
 import time
 import json
+from Chat2Audio import format_size
 
 
 def generate_tts_audio(text: str, output_file="output.wav"):
