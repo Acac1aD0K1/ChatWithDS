@@ -1,5 +1,4 @@
-全本地部署deepseek-r1<br>
-ollama  异步
+deepseek-r1  ollama  
 
 目前已完成功能：<br>
 ✅通过Python与deepseek交流<br>
